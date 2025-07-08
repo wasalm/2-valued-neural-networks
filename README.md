@@ -11,7 +11,7 @@ Statistics of our runs: https://wasalm.github.io/2-valued-neural-networks/
 3d Render of in the
 - Tetrehedral case: https://wasalm.github.io/2-valued-neural-networks/sphere.html?tetrahedra
 - Squashed tetrahedral case: https://wasalm.github.io/2-valued-neural-networks/sphere.html?squashed-tetrahedra
-- Cubical case: https://wasalm.github.io/2-valued-neural-networks/sphere.html?cube
+- Cubic case: https://wasalm.github.io/2-valued-neural-networks/sphere.html?cube
 
 
 # Install script
