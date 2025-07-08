@@ -1,0 +1,8 @@
+Testing the Neural network
+
+	Filename: ./public/data/new-example/run-20250704T132410-last.pickle
+	Eigenvalue: 9.873780250549316
+	Rayleigh quotient: 9.873601913452148
+	Root Mean Squared Error: 0.029536405578255653
+	Maximal absolute Error: 0.7644569873809814
+	Weighted maximal absolute Error: 0.10016024112701416

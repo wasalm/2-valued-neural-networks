@@ -1,0 +1,8 @@
+Testing the Neural network
+
+	Filename: ./public/data/cube/run-20250704T233216-last.pickle
+	Eigenvalue: 8.097725868225098
+	Rayleigh quotient: 8.102275848388672
+	Root Mean Squared Error: 0.1166016086935997
+	Maximal absolute Error: 4.713737964630127
+	Weighted maximal absolute Error: 0.4624332785606384

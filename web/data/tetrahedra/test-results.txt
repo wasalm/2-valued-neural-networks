@@ -1,0 +1,8 @@
+Testing the Neural network
+
+	Filename: ./public/data/tetrahedra/run-20250704T150505-last.pickle
+	Eigenvalue: 5.153101921081543
+	Rayleigh quotient: 5.1591901779174805
+	Root Mean Squared Error: 0.019998427480459213
+	Maximal absolute Error: 0.5715796947479248
+	Weighted maximal absolute Error: 0.06978592276573181
