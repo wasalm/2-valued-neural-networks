@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Z_2 eigenfunction</title>
+    <style>
+      body { margin: 0; }
+    </style>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <script type="module">
+      import * as THREE from 'three';
+
+      import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color().setHex( 0x112233 );
+      const camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+
+      const renderer = new THREE.WebGLRenderer();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      renderer.setAnimationLoop( animate );
+      document.body.appendChild( renderer.domElement );
+
+      const controls = new OrbitControls( camera, renderer.domElement );
+
+
+
+      const textureLoader = new THREE.TextureLoader();
+      const hash = (window.location.search.substring(1)).trim();
+      const texture = textureLoader.load( './data/'+hash+'/texture-latest.jpg?time=' + Date.now() );
+
+
+      const geometry = new THREE.SphereGeometry( 1, 128, 64 ); 
+      const material = new THREE.MeshBasicMaterial( { map: texture } ); 
+      const sphere = new THREE.Mesh( geometry, material ); scene.add( sphere );
+      scene.add( sphere );
+
+      camera.position.z = 5;
+
+
+      function animate() {
+
+        renderer.render( scene, camera );
+
+      }
+
+      window.addEventListener("resize", () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.render( scene, camera );
+      });
+    </script>
+  </body>
+</html>
+    

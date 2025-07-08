@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>AI for Z_2 valued eigenfunctions on a sphere</title>
+	<style>
+		th, td {
+		  padding: 15px;
+		}
+	</style>
+</head>
+<body>
+	<h1>AI for Z_2 valued eigenfunctions on a sphere</h1>
+	<h2>Runs:</h2>
+	<table id="folders">
+	</table>
+	<script type="text/javascript">
+
+		(async () => {
+			url = "./data/folders.txt?time=" + Date.now()
+			
+			table = document.getElementById("folders")
+
+			const req = new Request(url);
+		  	data = await fetch(req);
+		  	data = await data.text();
+		    data = data.split(/\/\r?\n/);
+
+		    for(let i=0; i<data.length; i++) {
+		    	runName = data[i].trim();
+		    	if(!runName) {
+		    		continue;
+		    	}
+
+		    	result = "<tr>";
+		    	result += "<td>" + runName + "</td>";
+
+		    	result += "<td><a href='data/"+runName+"'>(Goto Folder)</a></td>";
+		    	
+		    	result += "<td><a href='stats.html?"+runName+"'>Statistics</a></td>";
+
+		    	result += "<td><a href='data/"+runName+"/stdout.txt'>Logs</a></td>";
+
+		    	result += "<td><a href='data/"+runName+"/test-results.txt'>Test results</a></td>";
+		   
+		    	result += "<td><a href='data/"+runName+"/plot-latest.jpg'>Plot (2D)</a></td>";
+		    	result += "<td><a href='sphere.html?"+runName+"'>Plot (3D)</a></td>";
+
+		    	result += "<td><a href='data/"+runName+"/plot-error-latest.jpg'>Error plot (2D)</a></td>";
+		    	
+		    	result += "<td><a href='sphere-error.html?"+runName+"'>Error plot (3D)</a></td>";
+
+		    	result += "</tr>";
+
+		    	table.innerHTML += result
+		    }
+			
+
+		})();
+
+
+	</script>
+</body>
+</html>
