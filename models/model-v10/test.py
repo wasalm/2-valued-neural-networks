@@ -39,7 +39,7 @@ def testNeuralNetwork(file, log):
 	parameters = pickle.load(file)
 
 	exclusionDistance = jnp.full_like(testingSet[0], config.EXCLUSION_DISTANCE) 
-	distance = loss.minimumDistanceToBranchPoints(testingSet, parameters[4])
+	distance = loss.minimumDistanceToGraph(testingSet, parameters[4])
 	includePoints = jnp.greater(distance, exclusionDistance).astype(int)
 
 

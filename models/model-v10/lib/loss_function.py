@@ -22,7 +22,7 @@ import lib.z2_valued_function as z2
 # Calculate the distance to a branch point
 # We also remove the antipodal points, as the derivative can also break here.
 # 
-def minimumDistanceToBranchPoints(coord, branchPoints):
+def minimumDistanceToGraph(coord, branchPoints):
 	phi, theta = z2.toSpherical(coord)
 
 	# Distance from north pole and south pole
@@ -40,7 +40,7 @@ def minimumDistanceToBranchPoints(coord, branchPoints):
 		theta0 = branchPoints[1][i]
 
 		diffTheta = jnp.remainder(theta - theta0 + jnp.pi, 2.0 * jnp.pi) - jnp.pi
-		diffPhi = phi - phi0
+		diffPhi = jnp.maximum(0.0, phi - phi0)
 
 		distance = jnp.sqrt(jnp.square(diffTheta) + jnp.square(diffPhi))
 		result = jnp.minimum(result, distance)
@@ -177,7 +177,7 @@ def _lossFunction(coords, parameters):
 		jnp.cos(phi0)
 	])
 
-	distance = minimumDistanceToBranchPoints(coords, parameters[4])
+	distance = minimumDistanceToGraph(coords, parameters[4])
 	distance = jnp.greater(distance, exclusionDistance)
 	safeCoords = jnp.where(distance, coords, safePoint)
 
