@@ -7,7 +7,12 @@ It also has some 3d renders of our Z/2 eigenfunction.
 
 # Quick links
 
-TODO
+Statistics of our runs: https://wasalm.github.io/2-valued-neural-networks/
+3d Render of in the
+Tetrehedral case: https://wasalm.github.io/2-valued-neural-networks/sphere.html?new-example
+Squashed tetrahedral case: https://wasalm.github.io/2-valued-neural-networks/sphere.html?tetrahedra
+Cubical case: https://wasalm.github.io/2-valued-neural-networks/sphere.html?cube
+
 
 # Install script
 Download the code using GIT
